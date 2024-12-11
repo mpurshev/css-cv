@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* * - обращение ко всем элементам {
+    padding: 0;
+    margin: 0;
+
+    вернуть в исходное состояние
+} */
+
+body {
+    background-color: #f1f1f1;
+    color: #0f141e;
+
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Roboto", serif;
+    /* font: normal 16px "Roboto", serif; - другая запись*/
+}
+
+a {
+    color: black; /* цвет ссылки */
+    text-decoration: none; /* подчёркивание ссылки */
+}
+
+a:hover /* действие ссылки при наведении */ {
+    text-decoration: underline;/* при наведении ссылка подчёркивается */
+}
+
+a:active /* при наведении и удержании мышки, ссылка выделяется цветом */{
+    color: blue;
+}
+
+a:visited /* цвет ссылки, когда мы её посетили */ {
+    color: grey;
+}
+
+
+.avatar { /*для id мы можем записать вместо class - id, но тогда вместо . будет # */
+    width: 200px;
+    border-radius: 28px; /* или 50% */
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.25); /*  тень для фото */
+}
+
+.info {
+    display: flex;
+    margin-bottom: 20px; /* отступ снизу */
+}
+
+@media (max-width: 700px) {
+    .info {
+        text-align: center;
+        display: block;
+    }
+}
+
+.info-text {
+    margin-left: 40px;
+}
+
+.info-text h4 {
+    margin-bottom: 10px;
+}
+
+.info p {
+    color: #86898f;
+    margin: 0;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    /* letter-spacing: 5px; */
+    /* word-spacing: 42px; */
+}
+
+/* Box Model - работа над страницей */
+.container {
+    max-width: 750px; /* размер страницы */
+    margin: auto; /* расположение текста */
+    padding-top: 30px;
+}
+
+/* .social {
+    background: green;
+    padding: 15px; - расстояние от края блока до контента , можно указывать до 4 значений как в одной переменной, так и в нескольких:
+    padding: 15px 40px;
+
+    padding: 15px 20px 25px 30px;
+
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 25px;
+    padding-left: 30px;
+    это свойство с padding работает так же с margin
+
+    margin: 5px; - отступ от контента до блока 
+
+    border: 5px solid red; - сплошная линия красного цвета для всех границ
+    border-bottom-style: dotted; - нижняя граница точками
+    border-top-width: 15px; - толстая верхняя граница
+    border-right-color: blue; - правая грпаница синиго цвета
+
+}*/
+
+/* .box-model > div {
+    float: left;
+    background: black;
+    height: 200px;
+    border: 4px solid red;
+    width: 25%;
+    box-sizing: border-box;
+} свойство для размерности, если что, то смотреть документацию mdn
+ по box-sizing или видео css для начинающих с примерно 54 минуты*/
+
+.bg-yellow {
+    background: #fff9dc;
+}
+
+.bg-green {
+    background: #e5ffe7;
+}
+
+.bg-red {
+    background: #ffe5e5;
+}
+
+.card {
+    padding: 15px 20px;
+    margin-bottom: 20px; /* лучше всегда использовать для отступа */
+    border-radius: 20px; /* для скругления границ */
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.list {
+    padding: 0 20px; /* отступ списков */
+    /* list-style: none; - убоать все цифры списка */ 
+}
+
+.list li {
+    color: #86898f;
+    margin-bottom: 10px;
+}
+
+.table {
+    width: 100%;
+}
+
+.table td {
+    padding-bottom: 10px;
+}
+
+.table td:nth-child(2), .table td:nth-child(3) /* псевдоселекторы что бы не создавать много классов */ {
+    color: #86898f;
+}
+
+/* .table tr:nth-child(ood или even) {
+    background: red;
+} это то же самое, что описанно выше, просто как пример (tr смотреть в html)*/
+
+.link-list {
+    list-style: none;
+    padding: 0;
+}
+
+.link-list li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.contact h2 {
+    text-align: center;
+}
+
+.form-group label {
+    display: block; /* для того, бы название было сверху поля ввода, а не снизу */
+    font-size: 14px;
+    color: #86898f;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+    color: black;
+    padding: 15px 0 10px;
+    outline: none;
+    font-family: inherit;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.row > .form-group {
+    width: 50%;
+    margin-right: 20px;
+}
+
+.row > .form-group:first-child {
+    margin-right: 20px;
+}
+
+.btn {
+    background: #000;
+    padding: 15px 20px;
+    color: white;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Позиция 
+
+.position {
+    position: relative;
+    border: 4px solid black;
+    margin-top: 40px;
+    padding: 20px;
+    height: 300px;
+}
+
+.box {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    border-radius: 50px;
+     left: 0px;
+    bottom: 150px; 
+    width: 50px;
+    height: 50px;
+    background: lightcoral;
+}
+позиция для кеопки навигации */
